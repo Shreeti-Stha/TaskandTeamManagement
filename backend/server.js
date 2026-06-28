@@ -10,19 +10,30 @@ import authRoutes from "./routes/authRoutes.js";
 import projectRoutes from "./routes/projectRoutes.js";
 import taskRoutes from "./routes/taskRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
+import path from "path";
 
 dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 5000;
+const __dirname = path.resolve()
 
 app.use(helmet());
-app.use(
+
+if (process.env.NODE_ENV!== "production") {
+  app.use(
   cors({
     origin: process.env.CLIENT_URL || "http://localhost:5173",
     credentials: true
   })
 );
+}
+// app.use(
+//   cors({
+//     origin: process.env.CLIENT_URL || "http://localhost:5173",
+//     credentials: true
+//   })
+// );
 app.use(express.json({ limit: "1mb" }));
 app.use(morgan("dev"));
 
@@ -35,6 +46,13 @@ app.use("/api/tasks", taskRoutes);
 app.use("/api/projects", projectRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/users", userRoutes);
+
+if (process.env.NODE_ENV==="production") {
+  app.use(express.static(path.join(__dirname,"../frontend/dist")));
+app.get("*",(req, res)=>{
+  res.sendFile(path.join(__dirname,"../frontend", "dist", "index.html"))
+})
+}
 
 
 app.use(notFound);

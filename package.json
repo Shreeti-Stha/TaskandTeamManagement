@@ -1,0 +1,23 @@
+{
+  "name": "smart-task-team-management",
+  "version": "1.0.0",
+  "description": "A MERN full-stack project with authentication, team projects, task assignment, dashboard analytics, and an admin panel.",
+  "main": "index.js",
+  "scripts": {
+    "build":  "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "npm run start --prefix backend"
+ 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shreeti-Stha/TaskandTeamManagement.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Shreeti-Stha/TaskandTeamManagement/issues"
+  },
+  "homepage": "https://github.com/Shreeti-Stha/TaskandTeamManagement#readme"
+}
