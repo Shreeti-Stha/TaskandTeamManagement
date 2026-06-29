@@ -99,4 +99,5 @@ PUT    /api/admin/users/:id/status
 DELETE /api/admin/users/:id
 GET    /api/admin/projects
 DELETE /api/admin/projects/:id
+PUT    /api/admin/users/reset-password/:id
 ```
