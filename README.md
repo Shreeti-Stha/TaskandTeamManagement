@@ -1,6 +1,6 @@
 # Smart Task & Team Management System
 
-A MERN full-stack project with authentication, team projects, task assignment, dashboard analytics, and an admin panel.
+A MERN full-stack project with authentication, team projects, task assignment, dashboard analytics, and an admin panel. It is simple yet useful application for tracking tasks.
 
 ## Features
 
@@ -11,7 +11,7 @@ A MERN full-stack project with authentication, team projects, task assignment, d
 - Task CRUD with status and priority filters
 - User dashboard with task totals and progress chart
 - Admin dashboard with users, projects, tasks, and completion rate
-- Admin user activation/deactivation and deletion
+- Admin user activation/deactivation, password reset and deletion
 - Admin project listing and deletion
 
 ## Tech Stack
@@ -23,7 +23,7 @@ A MERN full-stack project with authentication, team projects, task assignment, d
 ## Project Structure
 
 ```text
-client/
+frontend/
   src/
     components/
     context/
@@ -31,7 +31,7 @@ client/
     pages/
     routes/
     services/
-server/
+backend/
   config/
   controllers/
   middleware/
@@ -50,14 +50,7 @@ npm run install:all
 npm install
 ```
 
-2. Create environment files:
-
-```bash
-cp server/.env.example server/.env
-cp client/.env.example client/.env
-```
-
-3. Update `server/.env` with your MongoDB connection string and JWT secret.
+2. Create environment files, Update `backend/.env` with your MongoDB connection string and JWT secret.
 
 4. Run the app:
 
